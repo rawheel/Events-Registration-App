@@ -1,0 +1,4 @@
+[0m2021.04.07 06:05:39 INFO  Started: Metals version 0.10.0 in workspace 'G:\vue learning\crud-app' for client vscode 1.55.0.[0m
+[0m2021.04.07 06:05:41 INFO  time: initialize in 1.32s[0m
+[0m2021.04.07 06:05:43 WARN  Build server is not auto-connectable.[0m
+[0m2021.04.07 06:05:43 WARN  no build tool detected in workspace 'G:\vue learning\crud-app'. The most common cause for this problem is that the editor was opened in the wrong working directory, for example if you use sbt then the workspace directory should contain build.sbt. [0m
