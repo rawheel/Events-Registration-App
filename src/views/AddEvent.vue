@@ -25,6 +25,7 @@ export default {
   components: {
     AdminLogin,
     EventRegister
-  }
+  },
+  
 }
 </script>

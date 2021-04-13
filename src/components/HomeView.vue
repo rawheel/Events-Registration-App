@@ -3,22 +3,22 @@
 <div class="bg-gray-900 pt-2 ">
 
 <div class="container mx-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-full mt-40 md:mt-16">
-    <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5  p-5 mb-2" v-for="event in eventData" :key="event.name">
+    <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5  p-5 mb-2" v-for="event in dataevent" :key="event.name">
         
        
         <div class="col-span-2">
             
-            <div class="text-base md:text-lg text-gray-300"> {{event.name}} <span class="text-xs text-gray-400">({{event.status}})</span></div>
+            <div class="text-base md:text-lg text-gray-300"> {{event.title}} <span class="text-xs text-gray-400">({{event.mode}} Event)</span></div>
           
-            <div class="text-sm">{{event.community}}</div>
-            <div class="text-xs text-gray-400">{{event.city}}, {{event.country}}</div>
-            <div class="text-xs text-gray-400">{{event.date}} {{event.time}}</div>
+            <div class="text-sm">{{event.organizer[0]}}</div>
+            <div class="text-xs text-gray-400">Karachi, Pakistan</div>
+            <div class="text-xs text-gray-400">{{event.event_date}} {{event.starting_time}}</div>
         </div>
 
-        <div>
+        <!--<div>
             <img class="w-16 mt-6 ml-6 md:ml-16 md:mt-2 md:w-18 rounded-full" :src="event.img">
 
-        </div>
+        </div> -->
 
        
         
@@ -35,6 +35,8 @@ export default {
     name:"HomeView",
     data(){
         return{
+            dataevent:[],
+
             eventData:[
 
                 {
@@ -106,6 +108,14 @@ export default {
                                 
             ]
         }
+    },
+   mounted(){
+       this.$api.events.eventAPI().then(response => {
+      this.dataevent = response.data;
+      console.log(this.dataevent)
+    });
+
+
     }
 }
 </script>
