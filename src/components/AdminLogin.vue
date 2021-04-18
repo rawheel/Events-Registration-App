@@ -163,6 +163,7 @@ export default {
                 })
                 .then(response => {
                     this.loginData = response
+                    this.$store.commit("updateLogin",true)
                     console.log(this.loginData,"responseeee");
 
                 })

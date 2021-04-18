@@ -6,3 +6,9 @@ export function eventAPI() {
     return axios.get('http://127.0.0.1:8000/events/');
      //return axios.get(`http://127.0.0.1:5000/githubapi/${params}`);
   }
+
+  export function eventRegAPI(data) {
+  
+    return axios.post('http://127.0.0.1:8000/events/',data);
+     
+  }
