@@ -9,6 +9,6 @@ export function eventAPI() {
 
   export function eventRegAPI(data) {
   
-    return axios.post('http://127.0.0.1:8000/events/',data);
+    return axios.post('http://127.0.0.1:8000/create-event/',data);
      
   }

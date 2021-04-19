@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-wrap content-center bg-gray-900 text-white h-screen pt-2 ">
-       <div class="grid justify-items-center grid-rows-10 md:grid-cols-3 gap-x-2 m-auto font-sans bg-gray-800 text-gray-900 h-auto w-auto p-10">
+    <div class="flex flex-wrap content-center bg-gray-900 text-white h-screen pt-2">
+       <div class="grid justify-items-center grid-rows-10 md:grid-cols-3 gap-x-2 m-auto font-sans bg-gray-800 text-gray-900 h-auto w-auto  p-10">
 
            <div class="flex justify-center  md:col-span-3 h-auto" >
                <div class="py-3 center mx-auto">
@@ -111,12 +111,12 @@ export default {
             title : this.title,
             category: this.category,
             description:this.description,
-            date_created: this.dateTime.split("T")[0],
+            DataTransfer: this.dateTime.split("T")[0],
             tagline:this.tagline,
             mode:this.mode,
             external_link:this.link,
             speaker:this.speaker,       
-            starting_time:this.dateTime.split("T")[1],
+            startingtime:this.dateTime.split("T")[1],
             }).then(response => {
                     
                     console.log(response,"Successfull submit");
