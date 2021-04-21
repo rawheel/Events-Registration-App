@@ -2,7 +2,7 @@
 
 <div class="bg-gray-900 h-screen pt-2 ">
 
-<div class="container mx-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-auto mt-40 md:mt-16">
+<div class="container m-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-auto mt-40 md:mt-16">
     <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="event in dataevent" :key="event.name">
         
        
