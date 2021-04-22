@@ -2,7 +2,7 @@
     <div class="flex flex-wrap content-center bg-gray-900 text-white h-screen pt-2">
        <div class="grid justify-items-center grid-rows-10 md:grid-cols-3 gap-x-2 m-auto font-sans bg-gray-800 text-gray-900  w-auto mt-10 p-10">
         
-           <div class="flex justify-center  md:col-span-3 h-auto" >
+           <div class="flex justify-center md:col-span-3 h-auto" >
                <div class="py-3 center mx-auto">
                     <div class="bg-gray-800 px-4 py-5 rounded-lg  text-center w-48">
                     <div class="mb-4">
@@ -21,14 +21,14 @@
            <div class="col-span-3 w-full">
            <input v-model="title" class=" mt-5 p-2  focus:outline-none focus:ring focus:border-gray-900" type="text" name="title" placeholder="Title">
         
-            <select v-model="mode" class= " mt-5  p-2 mx-9 w-1/3 focus:outline-none focus:ring focus:border-gray-900 text-black">
-                <option v-for="(mod,index) in modes" :value="mod" :key="index">
+            <select v-model="mod" class= " mt-5  p-2 md:mx-9 md:w-1/3 focus:outline-none focus:ring focus:border-gray-900 text-black">
+                <option class="text-black" v-for="(mod,index) in modes" :value="mod" :key="index">
                     {{mod}}
                     
                 </option>
                 
             </select>
-            <input v-model="dateTime" class= "mt-5 p-2 w-1/4 focus:outline-none focus:ring focus:border-gray-900 text-gray-900" type="datetime-local" id="birthdaytime" name="birthdaytime">
+            <input v-model="dateTime" class= "mt-5 p-2 md:w-1/4 focus:outline-none focus:ring focus:border-gray-900 text-gray-900" type="datetime-local" id="birthdaytime" name="birthdaytime">
 
 
            </div>
@@ -83,7 +83,7 @@ export default {
         return{
 
             title:'',
-            mode:'',
+            mod:'Online Event',
             dateTime:'',
             community:'',
             category:'',
@@ -102,7 +102,7 @@ export default {
 
                 title:this.title,
                 
-                mode:this.mode,
+                mode:this.getMode(),
                 date: this.dateTime.split("T")[0],
                 time:this.dateTime.split("T")[1],
                 community : this.community,
@@ -123,20 +123,21 @@ export default {
                     })
 
         },
-        
-
-    },
-    watch:{
-        mode(){
-            if(this.mode == 'Physical Event'){
-                this.mode= 'phy'
+        getMode(){
+            if(this.mod == 'Physical Event'){
+                
+                return 'phy'
             }else{
-                this.mode = 'on'
+                
+                return 'on'
             }
 
 
         }
-    }
+        
+
+    },
+    
  
 }
 </script>
