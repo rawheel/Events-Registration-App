@@ -15,6 +15,10 @@
             <div class="text-xs text-gray-400">{{event.date}} {{event.time}}</div>
         </div>
 
+        <div class="relative h-32 w-32 ...">
+            <button class="absolute bottom-0 bg-red-900 w-20 right-0" @click="eventDelete">Delete</button>
+        </div>
+
         <!--<div>
             <img class="w-16 mt-6 ml-6 md:ml-16 md:mt-2 md:w-18 rounded-full" :src="event.img">
 
@@ -107,6 +111,14 @@ export default {
                 },
                                 
             ]
+        }
+    },
+    methods:{
+        eventDelete(){
+            this.$api.events.eventDel()
+            .then(response => 
+            console.log(response,"del successfull")
+            )
         }
     },
    mounted(){
