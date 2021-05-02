@@ -3,10 +3,10 @@
 <div class="bg-gray-900 h-full pt-2 ">
 
 <div class="container m-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-auto mt-40 md:mt-16">
-    <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="event in dataevent" :key="event.name">
+    <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="event in dataevent" :key="event.id">
         
        
-        <div class="col-span-2">
+        <div class="col-span-2" @click="checkdiv($event,event.id)" >
             
             <div class="text-base md:text-lg text-gray-300"> {{event.title}} <span class="text-xs text-gray-400">({{event.mode}} Event)</span></div>
           
@@ -16,7 +16,7 @@
         </div>
 
         <div class="relative h-32 w-32 ...">
-            <button class="absolute bottom-0 bg-red-900 w-20 right-0" @click="eventDelete">Delete</button>
+            <button class="absolute bottom-0 bg-red-900 w-20 right-0" @click="eventDelete($event,event.id)">Delete</button>
         </div>
 
         <!--<div>
@@ -114,11 +114,14 @@ export default {
         }
     },
     methods:{
-        eventDelete(){
-            this.$api.events.eventDel()
+        eventDelete(event,id){
+            this.$api.events.eventDel(id)
             .then(response => 
             console.log(response,"del successfull")
             )
+        },
+        checkdiv(event,id){
+            console.log('verified div',id)
         }
     },
    mounted(){
