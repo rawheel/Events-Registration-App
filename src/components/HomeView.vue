@@ -2,8 +2,8 @@
 
 <div class="bg-gray-900 h-full pt-2 ">
 
-<div class="container m-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-auto mt-40 md:mt-16">
-    <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="event in dataevent" :key="event.id">
+<div class="container m-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-full mt-40 md:mt-16">
+    <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
         
        
         <div class="col-span-2" @click="checkdiv($event,event.id)" >
@@ -16,7 +16,7 @@
         </div>
 
         <div class="relative h-32 w-32 ...">
-            <button class="absolute bottom-0 bg-red-900 w-20 right-0" @click="eventDelete($event,event.id)">Delete</button>
+            <button class="absolute bottom-0 bg-red-900 w-20 right-0" @click="eventDelete($event,event.id,index)">Delete</button>
         </div>
 
         <!--<div>
@@ -114,10 +114,11 @@ export default {
         }
     },
     methods:{
-        eventDelete(event,id){
+        eventDelete(event,id,index){
             this.$api.events.eventDel(id)
-            .then(response => 
-            console.log(response,"del successfull")
+            .then(response =>
+            console.log(response,index,"del successfull"),
+            this.dataevent.splice(index,1)
             )
         },
         checkdiv(event,id){

@@ -68,7 +68,7 @@
         <div class="hidden sm:block sm:ml-6">
           <div class="flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium" to="/" aria-current="page">Home</router-link>
+            <router-link class="bg-gray-900 h-full text-white px-3 py-2 rounded-md text-sm font-medium" to="/" aria-current="page">Home</router-link>
 
             
       <router-link to="/register-event" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Event</router-link>
@@ -121,7 +121,7 @@
   <div class="sm:hidden" id="mobile-menu">
     <div class="px-2 pt-2 pb-3 space-y-1">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <router-link to="/" class="bg-gray-900 text-white block px-3 py-2 h-full rounded-md text-base font-medium" aria-current="page">Home</router-link>
+      <router-link to="/" class="bg-gray-900  text-white block px-3 py-2 h-full rounded-md text-base font-medium" aria-current="page">Home</router-link>
 
       <router-link to="/register-event" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Event</router-link>
       <router-link to="/Login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</router-link>

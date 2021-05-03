@@ -16,6 +16,6 @@ export function eventAPI() {
 
   export function eventDel(params) {
   
-    return axios.delete(`http://127.0.0.1:8000/api/events/${params}`);
+    return axios.delete(`http://127.0.0.1:8000/api/events/${params}/`);
      
   }
