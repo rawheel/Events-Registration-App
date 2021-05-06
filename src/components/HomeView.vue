@@ -1,8 +1,8 @@
 <template>
 
-<div class="bg-gray-900 h-full pt-2 ">
+<div class="bg-gray-900 pt-2">
 
-<div class="container m-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 h-full mt-40 md:mt-16">
+<div class="container m-auto font-sans bg-gray-800 text-yellow-400 md:w-6/12 p-2 mt-40 h-full md:mt-16">
     <div class="container grid grid-cols-3  mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
         
        
@@ -16,8 +16,10 @@
         </div>
 
         <div class="relative h-32 w-32 ...">
-            <button class="absolute bottom-0 bg-red-900 w-20 right-0" @click="eventDelete($event,event.id,index)">Delete</button>
+            <button class="absolute bottom-0 w-20 right-0" @click="eventDelete($event,event.id,index)"> <font-awesome-icon icon="trash"/></button>
+        
         </div>
+        
 
         <!--<div>
             <img class="w-16 mt-6 ml-6 md:ml-16 md:mt-2 md:w-18 rounded-full" :src="event.img">
