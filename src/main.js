@@ -16,10 +16,12 @@ Vue.config.productionTip = false
 
 
 import * as services from "./services";
+import vuetify from './plugins/vuetify'
 Vue.prototype.$api = services.default;
 
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')

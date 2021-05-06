@@ -19,6 +19,8 @@
             <button class="absolute bottom-0 w-20 right-0" @click="eventDelete($event,event.id,index)"> <font-awesome-icon icon="trash"/></button>
         
         </div>
+
+ 
         
 
         <!--<div>
@@ -32,6 +34,7 @@
     </div>
 
 </div>
+    
 
 </div>
 </template>
