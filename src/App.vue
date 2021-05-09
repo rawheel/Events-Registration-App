@@ -118,8 +118,8 @@
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
-    <div class="px-2 pt-2 pb-3 space-y-1">
+  <div class="sm:hidden ml-32" id="mobile-menu">
+    <div class="flex items-center  space-x-4">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <router-link to="/" class="bg-gray-900  text-white block px-3 py-2 h-full rounded-md text-base font-medium" aria-current="page">Home</router-link>
 

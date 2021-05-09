@@ -2,7 +2,7 @@
 
 <div class="bg-gray-900 overflow-auto pt-2">
 
-<div class="container  m-auto font-sans bg-gray-800 text-green-400 md:w-6/12 p-2 mt-40 h-full md:mt-16">
+<div class="container  m-auto font-sans bg-gray-800 text-green-400 md:w-6/12 p-2 mt-40 h-full md:h- md:mt-16">
     <div class=" flex mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
         <div class="mr-5">
             <img class="w-16 rounded-full" :src="imgTemp">

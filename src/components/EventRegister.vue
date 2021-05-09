@@ -1,6 +1,6 @@
 <template>
-    <div class="flex flex-wrap content-center bg-gray-900 text-white h-screen pt-2">
-       <div class="grid justify-items-center grid-rows-10 md:grid-cols-3 gap-x-2 m-auto font-sans bg-gray-800 text-gray-900  w-auto mt-10 p-10">
+    <div class="flex flex-wrap content-center bg-gray-900 text-white h-full md:h-screen pt-2">
+       <div class="md:grid flex flex-col  md:justify-items-center md:grid-rows-10  md:gap-x-2 md:m-auto font-sans bg-gray-800 text-gray-900 w-auto mt-10 p-10">
         
            <div class="flex justify-center md:col-span-3 h-auto" >
                <div class="py-3 center mx-auto">
@@ -18,56 +18,70 @@
            </div>
 
 
-           <div class="col-span-3 w-full">
-           <input v-model="title" class=" mt-5 p-2  focus:outline-none focus:ring focus:border-gray-900" type="text" name="title" placeholder="Title">
+           <div class="sm-flex sm-flex-col md:col-span-3 md:w-full">
+           <input v-model="title" class=" mt-5 p-2 w-full md:w-auto focus:outline-none focus:ring focus:border-gray-900" type="text" name="title" placeholder="Title">
         
-            <select v-model="mod" class= " mt-5  p-2 md:mx-9 md:w-1/3 focus:outline-none focus:ring focus:border-gray-900 text-black">
+            <select v-model="mod" class= " mt-5  p-2 md:mx-9 w-full md:w-1/3 focus:outline-none focus:ring focus:border-gray-900 text-black">
                 <option class="text-black" v-for="(mod,index) in modes" :value="mod" :key="index">
                     {{mod}}
                     
                 </option>
                 
             </select>
-            <input v-model="dateTime" class= "mt-5 p-2 md:w-1/4 focus:outline-none focus:ring focus:border-gray-900 text-gray-900" type="datetime-local" id="birthdaytime" name="birthdaytime">
+            <input v-model="dateTime" class= "mt-5 p-2 w-full md:w-1/4 focus:outline-none focus:ring focus:border-gray-900 text-gray-900" type="datetime-local" id="birthdaytime" name="birthdaytime">
 
 
            </div>
            
          
            
-           <div class="col-span-3 w-full">
+           <div class="sm-flex sm-flex-col md:col-span-3 md:w-full">
     
-           <input v-model ="community" class="mt-5  p-2   focus:outline-none focus:ring focus:border-gray-900" type="text" name="community" placeholder="Community">
+           <input v-model ="community" class="mt-5  p-2 w-full md:w-auto focus:outline-none focus:ring focus:border-gray-900" type="text" name="community" placeholder="Community">
 
 
  
-           <input v-model="category" class="mt-5 mx-9 p-2 w-1/3 focus:outline-none focus:ring focus:border-gray-900" type="text" name="category" placeholder="Category">
+           <input v-model="category" class="mt-5 md:mx-9 p-2 w-full md:w-1/3 focus:outline-none focus:ring focus:border-gray-900" type="text" name="category" placeholder="Category">
    
 
  
-           <input v-model="speaker" class="mt-5 p-2 w-1/4  focus:outline-none focus:ring focus:border-gray-900" type="text" name="speaker" placeholder="Speaker">
+           <input v-model="speaker" class="mt-5 p-2 md:w-1/4  w-full focus:outline-none focus:ring focus:border-gray-900" type="text" name="speaker" placeholder="Speaker">
 
 
            </div>
 
 
-            <div class="col-span-3 w-full">
-           <input v-model="city" class=" mt-5 p-2  w-auto focus:outline-none focus:ring focus:border-gray-900" type="text" name="city" placeholder="City">
+            <div class="sm-flex sm-flex-col md:col-span-3 md:w-full">
+           <input v-model="city" class=" mt-5 p-2 w-full md:w-auto focus:outline-none focus:ring focus:border-gray-900" type="text" name="city" placeholder="City">
           
 
   
-           <input v-model="country" class="mt-5 mx-9 w-1/3 p-2  focus:outline-none focus:ring focus:border-gray-900" type="text" name="country" placeholder="Country">
+           <input v-model="country" class="mt-5 md:mx-9 w-full md:w-1/3 p-2  focus:outline-none focus:ring focus:border-gray-900" type="text" name="country" placeholder="Country">
 
-           <input v-model="place" class="mt-5 p-2 w-1/4 focus:outline-none focus:ring focus:border-gray-900 text-gray-900" type="text" name="place" placeholder="Venue">
+           <input v-model="place" class="mt-5 p-2 md:w-1/4 w-full focus:outline-none focus:ring focus:border-gray-900 text-gray-900" type="text" name="place" placeholder="Venue">
            
 
           
             
            </div>
 
+            <div class="flex items-center flex-col md:col-span-3 w-full">
+         
+           <button type="submit" class=" mt-5 w-1/2 md:w-6/12 bg-green-400 text-gray-100 p-3 rounded-md" @click="submitData">Submit</button>
+           
+          
 
-           <div class="flex justify-center md:col-span-3  w-6/12 mt-7">
-           <button type="submit" class=" mt-5 w-8/12 md:w-6/12 bg-green-400 text-gray-100 p-3 rounded-md" @click="submitData">Submit</button>
+           <div v-if="this.successIndicate" class="text-green-500">
+                
+                Submission Successfull!
+           </div>
+
+           <div v-else-if="this.successIndicate=== false" class=" text-red-400">
+                Submission Failed!  
+               <!--<sweetalert-icon icon="error" />-->
+                
+           </div>
+
            </div>
 
            
@@ -91,7 +105,8 @@ export default {
             city:'',
             country:'',
             place:'',
-            modes:['Online Event','Physical Event']
+            modes:['Online Event','Physical Event'],
+            successIndicate:''
             
         }
     },
@@ -115,11 +130,14 @@ export default {
             }).then(response => {
                     
                     console.log(response,"Successfull submit");
+                    this.successIndicate = true
+                    //alert('Signed up')
 
                 })
                 .catch(error => {
                     this.errorMessage = error.message;
                     console.error("There was annnn error!", error);
+                    this.successIndicate = false
                     })
 
         },
