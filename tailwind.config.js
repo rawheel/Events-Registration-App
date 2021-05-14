@@ -5,10 +5,17 @@ module.exports = {
     fontFamily:{
       'sans': ['Helvetica', 'Arial', 'sans-serif'],
     },
-    extend: {},
+    extend: {
+      alignContent: ['hover', 'focus'],
+    },
   },
   variants: {
-    extend: {},
+    
+    extend: {
+      animation: ['responsive', 'motion-safe', 'motion-reduce'],
+    transitionProperty: ['responsive', 'motion-safe', 'motion-reduce'],
+      backgroundColor: ['active','group-focus'],
+    },
   },
   plugins: [],
 }

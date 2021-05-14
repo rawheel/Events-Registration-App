@@ -15,11 +15,11 @@
            <div>
 
             <div class="my-auto text-sm md:text-lg"> 
-                <input v-model="email" required class="mt-5 p-2 w-full focus:outline-none focus:ring focus:border-gray-900 " type="email" name="email" placeholder="Email" autocomplete="off">
-                <span v-if="!email.length" class="text-sm text-red-500">please enter an email</span>
+                <input v-model="username" required class="mt-5 p-2 w-full focus:outline-none focus:ring focus:border-gray-900 " type="username" name="username" placeholder="Username" autocomplete="off">
+                <span v-if="!username.length" class="text-sm text-red-500">please enter your username</span>
                 <input v-model="password" required class="mt-5 p-2 w-full focus:outline-none focus:ring focus:border-gray-900 " type="password" name="password" placeholder="Password" autocomplete="off">
                 <span v-if="!password.length" class="text-sm text-red-500">please enter a password</span><br>
-                <button type="submit" class="mt-5 w-6/12 md:w-4/12 bg-green-400 text-gray-100 p-3 rounded-md" @click="validateLogin">Login</button>
+                <button type="submit" class="mt-5 w-6/12 md:w-4/12 bg-green-400 text-gray-100 p-3 rounded-md" @click="valLogin">Login</button>
             </div>
         </div>
        </div>
@@ -33,6 +33,8 @@
 
 <script>
 
+
+
 export default {
 
    
@@ -41,8 +43,9 @@ export default {
     data(){
         return{
             
-            email:'',
+            username:'',
             password:'',
+            loginData:'',
             eventData:[
 
                 {
@@ -148,6 +151,28 @@ export default {
         }
     },
     methods:{
+
+        
+            valLogin(){
+                console.log(this.username,this.password,"passworr")
+                this.$api.login.loginApi({
+                    
+                    username:this.username,
+                    password:this.password
+
+                })
+                .then(response => {
+                    this.loginData = response
+                    this.$store.commit("updateLogin",true)
+                    console.log(this.loginData,"responseeee");
+
+                })
+                .catch(error => {
+                    this.errorMessage = error.message;
+                    console.error("There was annnn error!", error);
+                    })
+                ;
+                        },
         validateLogin(){
             if (this.email === this.$store.state.admin.email && this.password === this.$store.state.admin.password){
                 console.log("Vaidated Login")
@@ -155,11 +180,9 @@ export default {
             }else{
                 console.log(this.$store.state.admin.email,this.$store.state.admin.password,this.email,this.password,"not valid")
             }
-        }
-    }
-}
+        },
+  
+}}
 </script>
 
-<style>
 
-</style>

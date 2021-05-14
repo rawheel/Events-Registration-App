@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class = "h-screen">
   <HomeView/>
 </div>
 </template>
