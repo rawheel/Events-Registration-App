@@ -66,13 +66,13 @@
           <img class="hidden lg:block h-8 w-auto" src="@/assets/eventlogo_white.svg" alt="Workflow">
         </div>
         <div class="hidden sm:block sm:ml-6">
-          <div class="flex space-x-4">
+          <div class=" flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link class="bg-gray-900 h-full text-white px-3 py-2 rounded-md text-sm font-medium" to="/" aria-current="page">Home</router-link>
+            <router-link class=" focus:bg-gray-900 active:bg-gray-900 hover:bg-gray-700 h-full text-white px-3 py-2 rounded-md text-sm font-medium" to="/" aria-current="page">Home</router-link>
 
             
-      <router-link to="/register-event" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Event</router-link>
-      <router-link to="/Login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</router-link>
+      <router-link to="/register-event" class="focus:bg-gray-900 active:bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Event</router-link>
+      <router-link to="/Login" class="focus:bg-gray-900 active:bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</router-link>
 
           </div>
         </div>
@@ -118,10 +118,10 @@
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden ml-32" id="mobile-menu">
-    <div class="flex items-center  space-x-4">
+  <div class="sm:hidden" id="mobile-menu">
+    <div class="flex justify-center  space-x-4">
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <router-link to="/" class="bg-gray-900  text-white block px-3 py-2 h-full rounded-md text-base font-medium" aria-current="page">Home</router-link>
+      <router-link to="/" class=" bg-gray-900  text-white block px-3 py-2 h-full rounded-md text-base font-medium" aria-current="page">Home</router-link>
 
       <router-link to="/register-event" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Event</router-link>
       <router-link to="/Login" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Login</router-link>
@@ -141,6 +141,26 @@
 
 export default {
   name: 'App',
+  data(){
+    return{
+      isClickedHome: true,
+      isClickedAdd: false,
+      isClickedLogin: false
+    }
+  },
+  methods:{
+    homeFlag(){
+      this.isClickedHome = !this.isClickedHome
+      console.log(this.isClickedHome,"homee")
+    },
+    addFlag(){
+      this.isClickedAdd = !this.isClickedAdd
+    },
+    loginFlag(){
+      this.isClickedLogin = !this.isClickedLogin
+    },
+
+  }
  
 }
 </script>

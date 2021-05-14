@@ -67,7 +67,7 @@
 
             <div class="flex items-center flex-col md:col-span-3 w-full">
          
-           <button type="submit" class=" mt-5 w-1/2 md:w-6/12 bg-green-400 text-gray-100 p-3 rounded-md" @click="submitData">Submit</button>
+           <button type="submit" class="hover:bg-green-500 active:bg-green-700 mt-5 w-1/2 md:w-6/12 bg-green-400 text-gray-100 p-3 rounded-md" @click="submitData">Submit</button>
            
           
 

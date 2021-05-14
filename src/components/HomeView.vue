@@ -4,7 +4,7 @@
 
 <div class="container  m-auto font-sans bg-gray-800 text-green-400 md:w-6/12 p-2 mt-40 h-full md:h- md:mt-16">
     <div class=" flex mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
-        <div class="mr-5">
+        <div class="sm:mr-5 mr-2">
             <img class="w-16 rounded-full" :src="imgTemp">
 
         </div>
@@ -13,7 +13,7 @@
 
             
             
-            <div class="text-base md:text-lg text-gray-300"> {{event.title}} <span v-if="event.mode === 'on' " class="text-xs text-gray-400">(Online Event)</span> <span v-else class="text-xs text-gray-400">(Physical Event)</span></div>
+            <div class="md:text-lg text-sm text-gray-300"> {{event.title}} <span v-if="event.mode === 'on' " class="text-xs text-gray-400">(Online Event)</span> <span v-else class="text-xs text-gray-400">(Physical Event)</span></div>
             
             
             <div class="text-sm">{{event.community}}</div>
@@ -57,77 +57,6 @@ export default {
         return{
             imgTemp:'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/Asset%204.jpg',
             dataevent:[],
-
-            eventData:[
-
-                {
-                    'name':'Road Map to Flutter1',
-                    'status':'Online Event',
-                    'community':'DSC UIT',
-                    'city':'Karachi',
-                    'country': 'Pakistan',
-                    'date':'10-Apr-2021',
-                    'time':'9:00pm PST',
-                    'img':'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/flutterr.png',
-
-                },
-                {
-                    'name':'Road Map to Blockchain1',
-                    'status':'Online Event',
-                    'community':'DSC UIT',
-                    'city':'Karachi',
-                    'country': 'Pakistan',
-                    'date':'10-Apr-2021',
-                    'time':'9:00pm PST',
-                    'img':'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/blockchainn.png',
-
-                },
-                {
-                    'name':'Road Map to DataScience1',
-                    'status':'Physical Event',
-                    'community':'DSC UIT',
-                    'city':'Karachi',
-                    'country': 'Pakistan',
-                    'date':'10-Apr-2021',
-                    'time':'9:00pm PST',
-                    'img':'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/Asset%205.jpg',
-
-                },
-                                {
-                    'name':'Road Map to Flutter',
-                    'status':'Online Event',
-                    'community':'DSC UIT',
-                    'city':'Karachi',
-                    'country': 'Pakistan',
-                    'date':'10-Apr-2021',
-                    'time':'9:00pm PST',
-                    'img':'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/flutterr.png',
-
-                },
-                {
-                    'name':'Road Map to Blockchain',
-                    'status':'Online Event',
-                    'community':'DSC UIT',
-                    'city':'Karachi',
-                    'country': 'Pakistan',
-                    'date':'10-Apr-2021',
-                    'time':'9:00pm PST',
-                    'img':'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/blockchainn.png',
-
-                },
-                {
-                    'name':'Road Map to DataScience',
-                    'status':'Physical Event',
-                    'community':'DSC UIT',
-                    'city':'Karachi',
-                    'country': 'Pakistan',
-                    'date':'10-Apr-2021',
-                    'time':'9:00pm PST',
-                    'img':'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_3,f_auto,g_center,h_175,q_auto:good,w_175/v1/gcs/platform-data-dsc/events/Asset%205.jpg',
-
-                },
-                                
-            ]
         }
     },
     methods:{
