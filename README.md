@@ -1,6 +1,8 @@
 # Events Registration App
 A cool CRUD Vue app with the Python-Django backend. 😎
 
+<img src="https://github.com/rawheel/My-Unfollowers-Vue-App/blob/main/screenshots/main.jpg" alt="MyUnfollowers-main">
+
 ## Project setup
 ```
 npm install
