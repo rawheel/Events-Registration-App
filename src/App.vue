@@ -40,7 +40,7 @@
         <div class="hidden sm:block sm:ml-6">
           <div class=" flex space-x-4">
             <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-            <router-link class=" focus:bg-gray-900 active:bg-gray-900 hover:bg-gray-700 h-full text-white px-3 py-2 rounded-md text-sm font-medium" to="/" aria-current="page">Home</router-link>
+            <router-link class=" focus:bg-gray-900 active:bg-gray-900 hover:bg-gray-700 text-white px-3 py-2 rounded-md text-base font-medium" to="/" aria-current="page">Home</router-link>
 
             
       <router-link to="/register-event" class="focus:bg-gray-900 active:bg-gray-900 text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium">Add Event</router-link>
