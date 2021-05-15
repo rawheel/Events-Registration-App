@@ -3,14 +3,14 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import './index.css'
-
+import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
 import SweetAlertIcons from 'vue-sweetalert-icons';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTrash,faMapMarkerAlt,faGlobeAsia,faClock,faUniversity, faMonument } from '@fortawesome/free-solid-svg-icons'
+import { faTrash,faMapMarkerAlt,faGlobeAsia,faClock,faUniversity, faMonument} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faTrash,faMapMarkerAlt,faGlobeAsia,faClock,faUniversity,faMonument)
+library.add(faTrash,faMapMarkerAlt,faGlobeAsia,faClock,faUniversity,faMonument,faFontAwesome)
 
 Vue.use(SweetAlertIcons);
 
