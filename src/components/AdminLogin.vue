@@ -1,17 +1,17 @@
 <template>
 
-<div class="flex flex-wrap content-center bg-gray-900 h-screen pt-2 ">
+<div class="flex flex-wrap content-center bg-gray-900 sm-h-full h-screen pt-2 ">
     
 
-   <div class="container m-auto grid frid-rows-2 md:grid-cols-2 font-sans bg-gray-800 h-auto w-8/12">
+   <div class="container m-auto grid   grid-cols-1 lg:grid-cols-2 sm-grid-rows-2 font-sans bg-gray-800 h-auto w-8/12">
 
-       <div class="h-3/5 ">
-         <img   src="@/assets/login.jpg">
+       <div class="hidden lg:block lg:w-auto h-auto">
+         <img   src="@/assets/login.png">
        </div>
 
        <div class="p-10 font-sans">
-           <div class="font-sans font-bold text-lg md:text-xl text-green-400 mb-5 ">Login</div>
-           <div class="font-medium tracking-normal text-sm md:text-md text-gray-200">Welcome Back, Please login to admin account first.</div>
+           <div class="font-sans font-bold text-lg lg-text-xl text-green-400 lg:mb-5 mb-3 ">Login</div>
+           <div class="font-medium tracking-normal text-xs md:text-md text-gray-200">Welcome Back, Please login to admin account first.</div>
            <div>
 
             <div class="my-auto text-sm md:text-lg"> 

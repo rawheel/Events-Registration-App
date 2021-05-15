@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-wrap content-center bg-gray-900 text-white h-full md:h-screen pt-2">
-       <div class="md:grid flex flex-col  md:justify-items-center md:grid-rows-10  md:gap-x-2 md:m-auto font-sans bg-gray-800 text-gray-900 w-auto mt-10 p-10">
+       <div class="md:grid flex flex-col  md:justify-items-center md:grid-rows-10  md:gap-x-2 md:m-auto font-sans bg-gray-800 text-gray-900 w-auto md:mt-20 mt-28 p-4 md:p-10">
         
            <div class="flex justify-center md:col-span-3 h-auto" >
                <div class="py-3 center mx-auto">

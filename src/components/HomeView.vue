@@ -2,24 +2,24 @@
 
 <div class="bg-gray-900 overflow-auto pt-2">
 
-<div class="container  m-auto font-sans bg-gray-800 text-green-400 md:w-6/12 p-2 mt-40 h-full md:mt-16">
-    <div class=" flex mx-auto bg-gray-900 rounded-lg w-4/5   p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
-        <div class="mr-2">
-            <img class="w-16 rounded-full" src="@/assets/w_img.png">
+<div class="container  m-auto font-sans bg-gray-800 text-green-400 md:w-6/12 p-2 h-full md:mt-20 mt-28">
+    <div class=" flex mx-auto bg-gray-900 rounded-lg w-4/5 p-3 md:p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
+        <div class="mr-2 ">
+            <img class="w-12 rounded-full" src="@/assets/w_img.png">
 
         </div>
        
-        <div class="flex-1" @click="checkdiv($event,event.id)" >
+        <div class="flex-1 " @click="checkdiv($event,event.id)" >
 
             
             
-            <div class="md:text-lg text-sm text-gray-300"> {{event.title}} <span v-if="event.mode === 'on' " class="text-xs text-gray-400">(Online Event)</span> <span v-else class="text-xs text-gray-400">(Physical Event)</span></div>
+            <div class="md:text-lg text-sm text-gray-200">{{event.title}} </div>
             
             
             <div class="text-sm">{{event.community}}</div>
-            <div class="text-xs text-gray-400">{{event.place}}</div>
-            <div class="text-xs text-gray-400">{{event.city}}, {{event.country}}</div>
-            <div class="text-xs text-gray-400">{{event.date}} {{event.time}}</div>
+            <div class="text-xs text-gray-400"><font-awesome-icon icon="map-marker-alt" transform="shrink-4" :style="{ color: 'white' }"/> {{event.place}} <span v-if="event.mode === 'on' " class="text-xs text-gray-600">(Online Event)</span> <span v-else class="text-xs text-gray-600">(Physical Event)</span></div>
+            <div class="text-xs text-gray-400"><font-awesome-icon icon="globe-asia" transform="shrink-4" :style="{ color: 'white' }"/> {{event.city}}, {{event.country}}</div>
+            <div class="text-xs text-gray-400"><font-awesome-icon icon="clock" transform="shrink-4" :style="{ color: 'white' }"/> {{event.date}} {{event.time}}</div>
 
             
 
@@ -72,7 +72,7 @@ export default {
             console.log('verified div',id)
         }
     },
-   mounted(){
+   created(){
        this.$api.events.eventAPI().then(response => {
       this.dataevent = response.data;
       console.log(this.dataevent)
