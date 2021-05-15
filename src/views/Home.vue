@@ -2,7 +2,7 @@
 <div class="bg-gray-900 overflow-auto h-full  pt-2">
   
 
-<div >
+<div class="h-screen">
   <HomeView/>
 </div>
 </div>
