@@ -1,8 +1,8 @@
 <template>
-<div class="bg-gray-900 overflow-auto h-full  pt-2">
+<div class="bg-gray-900 pt-2">
   
 
-<div class="h-screen">
+<div >
   <HomeView/>
 </div>
 </div>

@@ -1,6 +1,7 @@
 
 <template>
-<div class="bg-gray-900 h-full">
+<div class="absolute bottom-0 top:0 left:0 right:0 margin:0  bg-gray-900 h-full w-full">
+<div>
 <div>
 <div>
   <nav class="bg-gray-800 fixed w-full">
@@ -103,7 +104,8 @@
 
 <router-view/>
 </div>
-<div class="flex justify-center p-3">
+
+<div class=" flex static bottom-0 bg-gray-900 w-full justify-center p-3">
   <div class="w-8 h-8 md:w-10 md:h-10">
   <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
 
@@ -119,6 +121,7 @@ style=" fill:#000000;"><defs><linearGradient x1="82.82545" y1="42.75" x2="82.825
         </div>
         </div>
         
+</div>
 </div>
 </div>
 

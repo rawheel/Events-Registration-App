@@ -2,7 +2,7 @@
 
 
 
-<div class="container  m-auto font-sans bg-gray-800  text-green-400 md:w-6/12 p-2 h-auto md:mt-20 mt-28">
+<div class="container  m-auto font-sans  bg-gray-800 text-green-400  md:w-6/12 p-2 md:mt-20 mt-28">
 <div v-if="dataevent.length">
     <div  class=" flex mx-auto bg-gray-900 rounded-lg w-4/5 p-3 md:p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
         
