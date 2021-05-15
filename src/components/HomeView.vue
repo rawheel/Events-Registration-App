@@ -1,9 +1,11 @@
 <template>
 
-<div class="bg-gray-900 overflow-auto pt-2">
 
-<div class="container  m-auto font-sans bg-gray-800 text-green-400 md:w-6/12 p-2 h-full md:mt-20 mt-28">
-    <div class=" flex mx-auto bg-gray-900 rounded-lg w-4/5 p-3 md:p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
+
+<div class="container  m-auto font-sans bg-gray-800  text-green-400 md:w-6/12 p-2 lg:h-full h-screen md:mt-20 mt-28">
+<div v-if="dataevent.length">
+    <div  class=" flex mx-auto bg-gray-900 rounded-lg w-4/5 p-3 md:p-5 mb-2" v-for="(event, index) in dataevent" :key="index">
+        
         <div class="mr-2 ">
             <img class="w-12 rounded-full" src="@/assets/w_img.png">
 
@@ -28,7 +30,10 @@
 
 
         <div >
-            <button  @click="eventDelete($event,event.id,index)"> <font-awesome-icon icon="trash"/></button>
+            <!--
+                REMOVE COMMENT IF WANT TO REQUEST API
+                <button  @click="eventDelete($event,event.id,index)"> <font-awesome-icon icon="trash"/></button> -->
+            <button  @click="temporaryDel($event,index)"> <font-awesome-icon icon="trash"/></button>
         
         </div>
         
@@ -37,16 +42,12 @@
             <button class="absolute bottom-0 w-20 right-0" @click="eventDelete($event,event.id,index)"> <font-awesome-icon icon="trash"/></button>
         
         </div>-->
-        
-
-       
-
-       
-        
-        
     </div>
 
 </div>
+<div class="grid justify-items-center" v-else>
+        No Registered Event Found!, Add Event to see it on timeline!
+    </div>
 
 </div>
 </template>
@@ -67,6 +68,10 @@ export default {
             console.log(response,index,"del successfull"),
             this.dataevent.splice(index,1)
             )
+        },
+        temporaryDel(event,index){
+            this.dataevent.splice(index,1)
+
         },
         checkdiv(event,id){
             console.log('verified div',id)

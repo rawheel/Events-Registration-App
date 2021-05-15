@@ -1,6 +1,10 @@
 <template>
-<div>
+<div class="bg-gray-900 overflow-auto h-full  pt-2">
+  
+
+<div >
   <HomeView/>
+</div>
 </div>
 </template>
 
