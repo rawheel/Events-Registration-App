@@ -1,4 +1,5 @@
-# appevent
+# Events Registration App
+A cool CRUD Vue app with the Python-Django backend. 😎
 
 ## Project setup
 ```
