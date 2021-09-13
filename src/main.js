@@ -9,6 +9,12 @@ import SweetAlertIcons from 'vue-sweetalert-icons';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrash,faMapMarkerAlt,faGlobeAsia,faClock,faUniversity, faMonument} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import Hotjar from 'vue-hotjar'
+
+Vue.use (Hotjar, {
+  id: '2600546', // Hotjar Site ID
+  isProduction: true,
+})
 
 library.add(faTrash,faMapMarkerAlt,faGlobeAsia,faClock,faUniversity,faMonument,faFontAwesome)
 
