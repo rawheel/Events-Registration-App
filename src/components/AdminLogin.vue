@@ -59,6 +59,7 @@
               please enter your username
             </div>
             <input
+              v-on:keyup.enter="login"
               type="password"
               v-model="password"
               class="
@@ -145,6 +146,8 @@ export default {
         this.usernameErrorFlag = "";
         this.passErrorFlag = "";
         this.loginFlag = true;
+
+        this.$store.commit("updateLogin", true);
       } else if (this.username != "admin" || this.password != "admin123") {
         console.log("if 3");
         this.usernameErrorFlag = "";

@@ -5,14 +5,14 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    admin:{
-      'email':'raheel@gmail.com',
-      'password':'12345'
+    admin: {
+      'email': 'raheel@gmail.com',
+      'password': '12345'
     },
-    login:false
+    login: false
   },
   mutations: {
-    updateLogin(state,payload){
+    updateLogin(state, payload) {
       state.login = payload
     }
 
